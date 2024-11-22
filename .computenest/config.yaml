@@ -1,0 +1,76 @@
+Service:
+  DeployType: ros
+  DeployMetadata:
+    SupplierDeployMetadata:
+      FileArtifactRelation:
+        '{{ computenest::file::LYH-RAIN_dify-test-docker-compose }}':
+          ArtifactId: ${Artifact.Artifact_1.ArtifactId}
+          ArtifactVersion: ${Artifact.Artifact_1.ArtifactVersion}
+      SupplierTemplateConfigs:
+        - Name: 单机版
+          Url: https://service-info-public.oss-cn-hangzhou.aliyuncs.com/1563457855438522/cn-hangzhou/templatef30a2b456a564c00a1a8.yaml
+          AllowedRegions:
+            - cn-hangzhou
+            - cn-shanghai
+            - cn-beijing
+    TemplateConfigs:
+      - Name: 单机版
+        Url: ros_templates/template1.yaml
+        AllowedRegions:
+          - cn-hangzhou
+          - cn-shanghai
+          - cn-beijing
+        PredefinedParameters: []
+        HiddenParameterKeys: []
+        DeployScene: ECS
+  OperationMetadata:
+    StatusOperationConfigs:
+      - TemplateName: 单机版
+        SupportOperations:
+          - Start
+          - Stop
+          - Restart
+    SupportBackup: true
+  ServiceType: private
+  ServiceInfo:
+    Locale: zh-CN
+    ShortDescription: Service description
+    Image: resources/icons/service_logo.png
+    Name: LYH-RAIN/dify-test-j5f4
+  ShareType: Public
+  ApprovalType: Manual
+Artifact:
+  Artifact_1:
+    ArtifactType: File
+    ArtifactName: LYH-RAIN_dify-test-docker-compose
+    Description:
+    ArtifactProperty:
+      Url: resources/artifact_resources/file/docker_compose.tar
+    SupportRegionIds:
+      - cn-qingdao
+      - cn-beijing
+      - cn-zhangjiakou
+      - cn-huhehaote
+      - cn-wulanchabu
+      - cn-hangzhou
+      - cn-shanghai
+      - cn-shenzhen
+      - cn-heyuan
+      - cn-guangzhou
+      - cn-chengdu
+      - cn-hongkong
+      - ap-northeast-1
+      - ap-southeast-1
+      - ap-southeast-3
+      - ap-southeast-5
+      - ap-southeast-6
+      - us-east-1
+      - us-west-1
+      - eu-west-1
+      - eu-central-1
+      - me-east-1
+      - cn-nanjing
+      - cn-fuzhou
+      - ap-southeast-7
+      - ap-northeast-2
+      - cn-wuhan-lr
